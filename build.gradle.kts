@@ -5,3 +5,19 @@ plugins {
     id("com.android.library") version "8.1.1" apply false
     id("org.jetbrains.kotlin.jvm") version "1.8.10" apply false
 }
+
+buildscript {
+    repositories{
+        google()
+        mavenCentral()
+    }
+    dependencies{
+        classpath(Build.androidBuildTools)
+        classpath(Build.hiltAndroidGradlePlugin)
+        classpath(Build.kotlinGradlePlugin)
+    }
+}
+
+tasks.register("clean",Delete::class){
+    delete(rootProject.buildDir)
+}
