@@ -7,11 +7,11 @@ import android.content.Context
  */
 sealed class UiText {
     data class DynamicString(val msg:String):UiText()
-    data class StringRecourse(val resId:Int):UiText()
+    data class StringResource(val resId:Int):UiText()
     fun asString(context: Context):String{
         return when(this){
             is DynamicString -> msg
-            is StringRecourse -> context.getString(resId)
+            is StringResource -> context.getString(resId)
         }
     }
 }
