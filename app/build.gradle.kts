@@ -58,6 +58,7 @@ dependencies {
     implementation(Compose.hiltNavigationCompose)
     implementation(platform(Compose.composeBom))
     implementation(Compose.material3)
+    implementation(Compose.material)
     implementation(Compose.runtime)
     implementation(Compose.navigation)
     implementation(Compose.viewModelCompose)
