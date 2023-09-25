@@ -21,14 +21,14 @@ import com.example.onboarding_presentaion.components.*
  */
 @Composable
 fun GoalScreen(
-    onNavigate: (UiEvent.Navigate) -> Unit,
+    onNextClicked: () -> Unit,
     viewModel: GoalViewModel = hiltViewModel()
 ) {
     val spacing = LocalSpacing.current
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
-                is UiEvent.Navigate -> onNavigate(event)
+                is UiEvent.OnFinished -> onNextClicked()
                 else -> Unit
             }
         }

@@ -29,7 +29,7 @@ import com.example.onboarding_presentaion.components.UnitTextField
 @Composable
 fun WeightScreen(
     scaffoldState: ScaffoldState,
-    onNavigate: (UiEvent.Navigate) -> Unit,
+    onNextClicked: () -> Unit,
     viewModel: WeightViewModel = hiltViewModel()
 ) {
     val spacing = LocalSpacing.current
@@ -37,7 +37,7 @@ fun WeightScreen(
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
-                is UiEvent.Navigate -> onNavigate(event)
+                is UiEvent.OnFinished -> onNextClicked()
                 is UiEvent.ShowSnackBar -> {
                     scaffoldState.snackbarHostState.showSnackbar(
                         message = event.msg.asString(context)

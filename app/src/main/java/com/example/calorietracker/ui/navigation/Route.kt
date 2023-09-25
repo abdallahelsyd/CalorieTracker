@@ -1,4 +1,4 @@
-package com.example.core.navigation
+package com.example.calorietracker.ui.navigation
 
 /**
  * Created by Abdallah Shehata on 9/9/2023.
