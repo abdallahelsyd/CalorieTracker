@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
+import coil.annotation.ExperimentalCoilApi
 import com.example.core.R
 import com.example.core.util.UiEvent
 import com.example.core_ui.LocalSpacing
@@ -26,6 +27,7 @@ import com.example.tracker_presentation.tracker_overview.components.TrackedFoodI
 /**
  * Created by Abdallah Shehata on 9/23/2023.
  */
+@ExperimentalCoilApi
 @Composable
 fun TrackerOverviewScreen(
     onNavigate: (UiEvent.Navigate) -> Unit,
